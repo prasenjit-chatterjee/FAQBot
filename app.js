@@ -39,6 +39,9 @@ var intents = new builder.IntentDialog({ recognizers: [regExIeltsStart, recogniz
 .matches('Services', (session) => {
     session.send('You reached Services intent, you said \'%s\'.', session.message.text);
 })
+.matches('Services', (session) => {
+    session.send('You are most welcome! How can I help you?');
+})
 .onDefault((session,args) => {
     session.send('Sorry, I did not understand \'%s\'.', session.message.text);
 });
